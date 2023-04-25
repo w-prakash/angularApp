@@ -1,0 +1,19 @@
+<h1>products-dashboard works!</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <app-wigets [products]="electronicProducts">
+                <h2 #heading>List of Electronics Products</h2>
+                <p id="visit">vistMore...</p>
+            </app-wigets>
+        </div>
+        <div class="col-md-6">
+            <app-wigets [products]="MobileProducts">
+                <h2  #heading>List of Mobile Products</h2>   
+            <p class="pb-5" id="visit">See more....</p>
+
+            </app-wigets>
+        </div>
+    </div>
+</div>

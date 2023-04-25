@@ -1,0 +1,19 @@
+<h1>Custome Pipe</h1>
+<input type="number" placeholder="EnterNumber" [(ngModel)]="mathNum">
+<h2>{{mathNum | pipe: 'number' : 'number'}}</h2>
+<h2>{{message | pipe: 'string' : 15}}</h2>
+
+<table>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Gender</th>
+    <th>Blood Group</th>
+    <ng-container *ngIf="userData">
+        <tr *ngFor="let user of userData.users">
+            <td>{{user.firstName}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.gender}}</td>
+            <td>{{user.bloodGroup}}</td>
+        </tr>
+    </ng-container>
+</table>

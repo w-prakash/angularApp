@@ -1,0 +1,19 @@
+<h1>template-driven-form works!</h1>
+<div class="container">
+    <div class="row m-5">
+        <div class="col-md-6"> 
+            <form class="form-horizontal m-2" #ngform="ngForm">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" placeholder="firstName" name="firstName" ngModel>
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" placeholder="lastName" name="lastName" ngModel>
+                <label for="country">Country</label>
+                <input type="text" class="form-control" placeholder="country" name="country" ngModel>
+                <label for="age">Age</label>
+                <input type="number" class="form-control" placeholder="age" name="age" ngModel>
+            </form>
+            <button type="submit" class="btn btn-primary mt-3" (click)="submit(ngform)">Submit</button>
+            <h2>{{ngform.value | json}}</h2>
+        </div>
+    </div>
+</div>
