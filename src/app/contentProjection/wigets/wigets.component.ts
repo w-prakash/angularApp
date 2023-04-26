@@ -14,7 +14,7 @@ export class WigetsComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log('title...', this.title);
+    // console.log('title...', this.title);
     if(this.title) {
       this.title.first.nativeElement.setAttribute('style', 'color:red; font-weight:bold');
     }

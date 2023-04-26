@@ -1,0 +1,9 @@
+<h1>Hooks works!</h1>
+<input type="text" [(ngModel)]="data">
+<app-hook-child [parentData]="data" [parentData]="userInfo">
+    <h1 #content>Parent to child</h1>
+</app-hook-child>
+
+    <input type="text" [(ngModel)]="username" >
+    <input type="password" [(ngModel)]="password">
+    <button type="submit" class="btn btn-primary"(click)="sendData()">Send Data</button>

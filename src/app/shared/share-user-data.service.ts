@@ -8,7 +8,7 @@ import { ajax } from 'rxjs/ajax';
 export class ShareUserDataService {
   userData: any;
   constructor(private http: HttpClient) { 
-  console.log('service called');
+  // console.log('service called');
   }
 
 
@@ -18,7 +18,7 @@ export class ShareUserDataService {
   }
 
  public errorHandler() {
-    console.log('error function called....');
+    // console.log('error function called....');
   //  return "Server is Down Please try again...";
   return throwError(() => new Error('Server is Down Please try again...'))
   }

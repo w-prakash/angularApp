@@ -11,7 +11,7 @@ export class ChildComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.childProperty);
+    // console.log(this.childProperty);
   }
 
 }

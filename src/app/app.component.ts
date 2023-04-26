@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
         this.userData = users
       },(error) => {
         this.errorMessage = error.message
-        console.log(error.message);
+        // console.log(error.message);
       })
   }
 

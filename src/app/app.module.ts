@@ -25,6 +25,9 @@ import { ViewChildrenComponent } from './view-child-view-children/view-children/
 import { ProductsDashboardComponent } from './contentProjection/products-dashboard/products-dashboard.component';
 import { WigetsComponent } from './contentProjection/wigets/wigets.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { HooksComponent } from './hooks/hooks.component';
+import { HookChildComponent } from './hooks/hook-child/hook-child.component';
+import { UserInterface } from './hooks/users';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,9 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
     ViewChildrenComponent,
     ProductsDashboardComponent,
     WigetsComponent,
-    TemplateDrivenFormComponent
+    TemplateDrivenFormComponent,
+    HooksComponent,
+    HookChildComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +59,7 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
     FormsModule,
     HttpClientModule,
   ],
-  providers: [MessageShareService, ShareUserDataService],
+  providers: [MessageShareService, ShareUserDataService, UserInterface],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
