@@ -1,9 +1,10 @@
 .header {
     width: 100%;
-    display: flex;
+    display: inline-block;
     background-color: #656667;
     flex-wrap: wrap;
     height: 50px;
+    flex-direction: row-reverse;
 }
 li {
     display: inline-block;

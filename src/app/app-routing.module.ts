@@ -10,13 +10,13 @@ import { UserDetailsComponent } from './users/user-details/user-details.componen
 import { CanActiveRouteGuard } from './route-gaurds/can-active-route.guard';
 import { MessageComponent } from './users/message/message.component';
 import { UsersModule } from './users/users.module';
-
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'common',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'home',
@@ -25,11 +25,11 @@ const routes: Routes = [
   },
   {
     path: 'about',
-    component: AboutComponent
+    component: AboutComponent,
   },
   {
     path: 'products',
-    component: ProductsComponent
+    component: ProductsComponent,
   },
   // {
   //   path: 'users',
@@ -45,22 +45,22 @@ const routes: Routes = [
   //   component: MessageComponent,
   // },
   {
+    path: 'common',
+    component: CommonComponent,
+  },
+  {
     path: 'contact',
     component: ContactComponent,
   },
+  
   {
-    path: 'common',
-    component: CommonComponent
-  },
-    {
-      path: 'contact',
-      component: ContactComponent
-    }
+    path: '**',
+    component: PageNotFoundComponent
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes), UsersModule],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
-

@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { CustomePipeComponent } from './pipes/custome-pipe/custome-pipe.component';
 import { BuiltInPipeComponent } from './pipes/built-in-pipe/built-in-pipe.component';
 import { PureComponent } from './pure/pure.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PipePipe } from './pipes/pipe.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -47,6 +47,7 @@ import { CanActiveRouteGuard } from './route-gaurds/can-active-route.guard';
 import { Admin } from './services/admin.service';
 import { GetUserDetailsService } from './services/get-user-details.service';
 import { HandleErrorService } from './services/handle-error.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -81,8 +82,9 @@ import { HandleErrorService } from './services/handle-error.service';
     ProductsComponent,
     HomeComponent,
     UsersComponent,
+    PageNotFoundComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, ReactiveFormsModule],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

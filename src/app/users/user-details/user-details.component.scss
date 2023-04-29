@@ -64,8 +64,9 @@ body{
 
 .buttons button:nth-child(1){
        border:1px solid peru !important;
-       color:peru;
+       background-color:peru;
        height:40px;
+       color: #fff;
 }
 
 .buttons button:nth-child(1):hover{
@@ -75,7 +76,7 @@ body{
        background-color:peru;
 }
 
-.buttons button:nth-child(2){
+.buttons button:nth-child(1){
        border:1px solid peru !important;
        background-color:peru;
        color:#fff;

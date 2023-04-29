@@ -6,6 +6,7 @@ import { UsersComponent } from './users.component';
 import { MessageComponent } from './message/message.component';
 import { ContactComponent } from './contact/contact.component';
 import { CanActiveRouteGuard } from '../route-gaurds/can-active-route.guard';
+import { AddUserComponent } from './add-user/add-user.component';
 
 const routes: Routes = [
   {
@@ -32,9 +33,13 @@ const routes: Routes = [
       },
     ]
   },
+  {
+    path: 'addUser',
+    component: AddUserComponent,
+  },
 ];
 @NgModule({
-  declarations: [UserDetailsComponent, MessageComponent, ContactComponent],
+  declarations: [UserDetailsComponent, MessageComponent, ContactComponent, AddUserComponent],
   imports: [CommonModule, RouterModule.forChild(routes)],
 })
 export class UsersModule {
