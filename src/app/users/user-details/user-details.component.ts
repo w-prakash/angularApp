@@ -33,7 +33,7 @@ export class UserDetailsComponent implements OnInit {
   }
 
   gotoPage(page:string) {
-    this.router.navigate([`/${page}`]);
+    this.router.navigate([`/users/${this.userInfo.id}/${page}`]);
   }
 
 }

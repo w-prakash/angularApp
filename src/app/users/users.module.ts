@@ -5,23 +5,33 @@ import { UserDetailsComponent } from './user-details/user-details.component';
 import { UsersComponent } from './users.component';
 import { MessageComponent } from './message/message.component';
 import { ContactComponent } from './contact/contact.component';
+import { CanActiveRouteGuard } from '../route-gaurds/can-active-route.guard';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'users',
     component: UsersComponent,
+    canActivate: [CanActiveRouteGuard],
   },
-    // children: [
+  {
+    path: 'users/:id',
+    component: UserDetailsComponent,
+    children:[
       {
-        path: 'users/:id',
-        component: UserDetailsComponent,
+        redirectTo: 'message',
+        path: '',
+        pathMatch: 'full'
       },
       {
         path: 'message',
         component: MessageComponent,
-      }
-    // ],/
-  // },
+      },
+      {
+        path: 'contact',
+        component: ContactComponent,
+      },
+    ]
+  },
 ];
 @NgModule({
   declarations: [UserDetailsComponent, MessageComponent, ContactComponent],

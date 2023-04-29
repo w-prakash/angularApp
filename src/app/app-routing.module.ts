@@ -9,6 +9,7 @@ import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
 import { CanActiveRouteGuard } from './route-gaurds/can-active-route.guard';
 import { MessageComponent } from './users/message/message.component';
+import { UsersModule } from './users/users.module';
 
 
 const routes: Routes = [
@@ -30,19 +31,19 @@ const routes: Routes = [
     path: 'products',
     component: ProductsComponent
   },
-  {
-    path: 'users',
-    loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
-  },
-  {
-    path: 'users/:id',
-    component: UserDetailsComponent,
-    canActivate: [CanActiveRouteGuard]
-  },
-  {
-    path: 'message',
-    component: MessageComponent,
-  },
+  // {
+  //   path: 'users',
+  //   loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
+  // },
+  // {
+  //   path: 'users/:id',
+  //   component: UserDetailsComponent,
+  //   canActivate: [CanActiveRouteGuard]
+  // },
+  // {
+  //   path: 'message',
+  //   component: MessageComponent,
+  // },
   {
     path: 'contact',
     component: ContactComponent,
@@ -58,7 +59,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), UsersModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
