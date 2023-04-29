@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
 import { CanActiveRouteGuard } from './route-gaurds/can-active-route.guard';
+import { MessageComponent } from './users/message/message.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,14 @@ const routes: Routes = [
     path: 'users/:id',
     component: UserDetailsComponent,
     canActivate: [CanActiveRouteGuard]
+  },
+  {
+    path: 'message',
+    component: MessageComponent,
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
   },
   {
     path: 'common',
