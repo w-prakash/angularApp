@@ -1,31 +1,7 @@
-<!-- Pipes -->
-<!-- <app-built-in-pipe></app-built-in-pipe>
-<app-custome-pipe></app-custome-pipe> -->
-<!-- <app-observer></app-observer> -->
-<app-comp1></app-comp1>
-<app-comp2></app-comp2>
-
-<h1>Parent to Child Component</h1>
-<app-parent></app-parent>
-<app-child></app-child>
-
-<hr>
-<h1>Child to Parent Component</h1>
-<app-parent1></app-parent1>
-<div *ngIf="userData && userData.length > 0; else error">
-    <h1>User Data</h1>
-    <p *ngFor="let item of userData"> {{item.name}}</p>
+<div class="header">
+        <li *ngFor="let item of menuItems" (click)="gotoPage(item.url)">
+           <a >{{item.name}}</a>
+        </li>
 </div>
 
-<ng-template #error>
-    {{errorMessage}}    
-</ng-template>
-
-<app-view-child-view-children></app-view-child-view-children>
-<app-view-children #viewChild></app-view-children>
-<button type="button" class="btn btn-primary m-1" (click)="inc()">Increment</button>
-<button type="button" class="btn btn-primary" (click)="dec()">Decrement</button>
-<app-products-dashboard></app-products-dashboard>
-<app-template-driven-form></app-template-driven-form>
-<app-hooks></app-hooks>
-<app-custome-directive></app-custome-directive>
+<router-outlet></router-outlet>

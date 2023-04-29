@@ -9,7 +9,7 @@ import { PureComponent } from './pure/pure.component';
 import { FormsModule } from '@angular/forms';
 import { PipePipe } from './pipes/pipe.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ObserverComponent } from './observer/observer.component';
 import { Comp1Component } from './comp1/comp1.component';
 import { Comp2Component } from './comp2/comp2.component';
@@ -30,6 +30,23 @@ import { HookChildComponent } from './hooks/hook-child/hook-child.component';
 import { UserInterface } from './hooks/users';
 import { CustomeDirectiveComponent } from './custome-directive/custome-directive.component';
 import { CustomeDirectiveDirective } from './shared/custome-directive.directive';
+import { HostListnerHostBindComponent } from './host-listner-host-bind/host-listner-host-bind.component';
+import { UserInterceptor } from './interceptors/user-interceptor';
+import { LoggingInterceptor } from './interceptors/loggingInterceptor';
+import { CustomeColorDirective } from './shared/custome-color.directive';
+import { CommonComponent } from './common/common.component';
+import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './about/about.component';
+import { ProductsComponent } from './products/products.component';
+import { HomeComponent } from './home/home.component';
+import { UsersComponent } from './users/users.component';
+import { UsersService } from './services/users.service';
+import { UserDetailsComponent } from './users/user-details/user-details.component';
+import { UsersModule } from './users/users.module';
+import { CanActiveRouteGuard } from './route-gaurds/can-active-route.guard';
+import { Admin } from './services/admin.service';
+import { GetUserDetailsService } from './services/get-user-details.service';
+import { HandleErrorService } from './services/handle-error.service';
 
 @NgModule({
   declarations: [
@@ -55,15 +72,37 @@ import { CustomeDirectiveDirective } from './shared/custome-directive.directive'
     HooksComponent,
     HookChildComponent,
     CustomeDirectiveComponent,
-    CustomeDirectiveDirective
+    CustomeDirectiveDirective,
+    HostListnerHostBindComponent,
+    CustomeColorDirective,
+    CommonComponent,
+    ContactComponent,
+    AboutComponent,
+    ProductsComponent,
+    HomeComponent,
+    UsersComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoggingInterceptor,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: UserInterceptor,
+      multi: true,
+    },
+    MessageShareService,
+    ShareUserDataService,
+    UserInterface,
+    UsersService,
+    CanActiveRouteGuard,
+    Admin,
+    GetUserDetailsService,
+    HandleErrorService
   ],
-  providers: [MessageShareService, ShareUserDataService, UserInterface],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,13 @@
+.primary {
+    background-color: peru;
+    color: #fff;
+}
+tbody {
+    tr {
+        cursor: pointer;
+    }
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+} 
