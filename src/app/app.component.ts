@@ -37,6 +37,10 @@ export class AppComponent implements OnInit {
     {
       name: 'Contact',
       url: '/contact'
+    },
+    {
+      name: 'Js Code',
+      url: '/script'
     }
   ];
   constructor(private router: Router) {

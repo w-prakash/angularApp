@@ -11,12 +11,17 @@ import { CanActiveRouteGuard } from './route-gaurds/can-active-route.guard';
 import { MessageComponent } from './users/message/message.component';
 import { UsersModule } from './users/users.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { JavascriptCodingComponent } from './javascript-coding/javascript-coding.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'common',
+    redirectTo: 'script',
     pathMatch: 'full',
+  },
+  {
+    path: 'script',
+    component: JavascriptCodingComponent
   },
   {
     path: 'home',

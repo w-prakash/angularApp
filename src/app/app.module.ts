@@ -48,6 +48,7 @@ import { Admin } from './services/admin.service';
 import { GetUserDetailsService } from './services/get-user-details.service';
 import { HandleErrorService } from './services/handle-error.service';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { JavascriptCodingComponent } from './javascript-coding/javascript-coding.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +84,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HomeComponent,
     UsersComponent,
     PageNotFoundComponent,
+    JavascriptCodingComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, ReactiveFormsModule],
   providers: [
